@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Header from './header.js';
+import Projects from './projects.js';
 // import ReactDOM from 'react-dom';
 
 class Main extends React.Component {
@@ -17,7 +18,7 @@ class Main extends React.Component {
 		return (
 			<main>
 				<Header title={this.state.title} subtitle={this.state.subtitle} />
-				Projects
+				<Projects />
 			</main>
 		)
 	}
