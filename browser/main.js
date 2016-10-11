@@ -1,7 +1,26 @@
-require('./main.css');
-console.log('testing webpack');
+'use strict';
 
+import React from 'react';
+import Header from './header.js';
+// import ReactDOM from 'react-dom';
 
-let x = 'this should be var now';
+class Main extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			title: "Kimber Lynch",
+			subtitle: "Fullstack Developer & Designer"
+		};
+	}
+	
+	render(){
+		return (
+			<main>
+				<Header title={this.state.title} subtitle={this.state.subtitle} />
+				Projects
+			</main>
+		)
+	}
+}
 
-() => 'hello';
+export default Main;
