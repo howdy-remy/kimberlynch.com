@@ -11,7 +11,7 @@ import SingleProject from './components/SingleProject';
 import Info from './components/Info';
 
 const router = (
-	<Router history={browserHistory}>
+	<Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
 		<Route path="/" component={Main}>
 			<IndexRoute component={ProjectList} />
 			<Route path="/project/:projectId" component={SingleProject} />
