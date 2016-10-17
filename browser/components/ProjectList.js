@@ -2,33 +2,26 @@
 'use strict';
 
 import React from 'react';
-import Project from './ProjectCard.js';
-import data from '../data/data';
+import ProjectCard from './ProjectCard';
+import Header from './Header';
+import projects from '../data/projects';
 
-class Projects extends React.Component {
-	constructor(){
-		super();
-		this.state = {
-			projects: data
-		};
-	}
-
+const ProjectList = React.createClass({
 	render(){
 		return (
+			<div>
+			<Header title="Kimber Lynch" subtitle="Fullstack Developer & Designer" />
 			<section id="project-listing">
-			<h3>Current Work</h3>
-			<ul className="project-cards">
-			
-				{
-          this.state.projects.map(p => (
-            <Project key={p.title} project={p} />
-          ))
-        }
-      </ul>
-      
+				<h3>Current Work</h3>
+				<ul className="project-cards">
+					{
+						projects.map((project,i)=> <ProjectCard key={i} i={i} project={project}/>)
+					}
+				</ul>
 			</section>
+			</div>
 		);
 	}
-}
+});
 
-export default Projects;
+export default ProjectList;

@@ -1,29 +1,19 @@
 'use strict';
 
 import React from 'react';
-import Header from './Header.js';
-import ProjectList from './ProjectList.js';
 import Navigation from './Nav.js';
+import Header from './Header.js';
 
-class Main extends React.Component {
-	constructor(){
-		super();
-		this.state = {
-			title: 'Kimber Lynch',
-			subtitle: 'Fullstack Developer & Designer'
-
-		};
-	}
-	
+const Main = React.createClass({
 	render(){
 		return (
 			<main>
 				<Navigation />
-				<Header title={this.state.title} subtitle={this.state.subtitle} />
-				<ProjectList />
+				{React.cloneElement(this.props.children,this.props)}
 			</main>
 		);
 	}
-}
+});
 
 export default Main;
+
