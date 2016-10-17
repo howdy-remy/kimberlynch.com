@@ -2,7 +2,7 @@
 module.exports = {
   entry: './browser/index.js',
   output: {
-  	path: './public/',
+    path: './public/',
     filename: 'bundle.js'
   },
   watch: true,
@@ -19,6 +19,10 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style!css!scss'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   }
