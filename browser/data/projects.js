@@ -4,14 +4,19 @@ const projects = [{
   client: '',
   text: `Path Paradox is an online multi-player game based on the popular board game *Tsuro*. Place a tile in front of your token to continue your path, but be careful to keep your token on the board as the last one remaining wins. 
 
+  Path Paradox was created in collaboration with [Lori-Anne Ashwood](https://github.com/ashes74), [Jennifer Cen](https://github.com/cenjennifer ), and [Torng-Lin (Taffy) Chen](https://github.com/maxww). You can watch a video of our presentation [here!](http://www.gracehopper.com/student-projects/path-paradox)
+
 We built the board as a graph structure of nodes organized into the 36 spaces of the board, eight nodes per space which correspond to the eight notches in a tile. Placing a tile created “neighbor” associations between nodes which represented the paths on the board. This process creates a collection of linked lists that can be traversed in any direction. This tile placement is then broadcast to Firebase so all players will receive a real-time update of the state of the board. After they receive this broadcast, each player will move themselves along their paths until they reach the end, the edge of the board, or collide with another player.
 
 We utilized Firebase to store only the essential data to keep players’ local game states seamlessly in sync with one another. The minimal structure of the data keeps updates between players speedy and we leveraged the built-in authentication to manage game states between players.
 
-You can play Path Paradox any time at [pathparadox.com](http://pathparadox.com).`,
+You can play Path Paradox any time at [pathparadox.com](https://www.youtube.com/watch?v=dNofUqUkkF8).`,
   createdAtVD: false,
   awards: [],
-  images: []
+  images: [
+    'path-paradox_01.jpg',
+    'path-paradox_02.jpg' 
+  ]
 }, {
   url: 'rosyfeed',
   title: 'RosyFeed',
@@ -23,7 +28,12 @@ Uses the Chrome JavaScript APIs, jQuery, Browserify,  ReText + ReText-Sentiment,
 Check it out on the [Chrome Web Store](http://bit.ly/rosyfeed).`,
   createdAtVD: false,
   awards: [],
-  images: []
+  images: [
+    'rosyfeed_01.jpg',
+    'rosyfeed_02.jpg',
+    'rosyfeed_03.jpg',
+    'rosyfeed_04.jpg'
+  ]
 }, {
   url: '1630-pop-up-shoppe',
   title: '1630 Pop-Up Shoppe',
@@ -100,7 +110,7 @@ Check it out on the [Chrome Web Store](http://bit.ly/rosyfeed).`,
   url: 'visual-dialogue',
   title: 'Visual Dialogue',
   client: '',
-  text: `When I joined Visual Dialogue in 2011 their website was still in Flash—it was definitely in need of an update. I helped design the new layout and initially built it out with Cargo Collective. Once we outgrew that platform I redeveloped a responsive version using PHP, HTML, CSS and jQuery using Kirby CMS. See the full website at [visualdialogue.com](http://visualdialogue.com).`,
+  text: `When I joined Visual Dialogue in 2011 their website was still in Flash—it was definitely in need of an update. I helped design the new layout and initially built it out with Cargo Collective. Once we outgrew that platform I redeveloped a responsive version using PHP, HTML, CSS and jQuery using [Kirby CMS](http://getkirby.com). See the full website at [visualdialogue.com](http://visualdialogue.com).`,
   createdAtVD: true,
   awards: [],
   images: [
