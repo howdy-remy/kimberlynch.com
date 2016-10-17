@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', function(req, res, next){
+app.get('*', function(req, res, next){
 	res.sendFile(__dirname + '/browser/index.html');
 });
 
