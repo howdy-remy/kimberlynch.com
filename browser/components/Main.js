@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Navigation from './Nav.js';
-import Header from './Header.js';
 
 const Main = React.createClass({
 	render(){
