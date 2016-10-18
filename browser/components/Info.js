@@ -10,7 +10,7 @@ const Bio = React.createClass({
 		return (
 			<section className="bio">
 				<ReactMarkdown source={info.bio} />
-				<h5>Projects I have worked on have been recognized by</h5>
+				<h5>Projects I have worked on have been recognized by:</h5>
 				<p> {info.recognized.join(', ')}, & more.</p>
 				<h5>colophon</h5>
 				<p>{ info.colophon }</p>
