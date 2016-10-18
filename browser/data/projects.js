@@ -6,7 +6,7 @@ const projects = [{
 
   Path Paradox was created in collaboration with [Lori-Anne Ashwood](https://github.com/ashes74), [Jennifer Cen](https://github.com/cenjennifer ), and [Torng-Lin (Taffy) Chen](https://github.com/maxww). You can watch a video of our presentation [here!](http://www.gracehopper.com/student-projects/path-paradox)
 
-We built the board as a graph structure of nodes organized into the 36 spaces of the board, eight nodes per space which correspond to the eight notches in a tile. Placing a tile created “neighbor” associations between nodes which represented the paths on the board. This process creates a collection of linked lists that can be traversed in any direction. This tile placement is then broadcast to Firebase so all players will receive a real-time update of the state of the board. After they receive this broadcast, each player will move themselves along their paths until they reach the end, the edge of the board, or collide with another player.
+We built the board as a graph structure of nodes organized into the 36 spaces of the board, eight nodes per space which correspond to the eight notches in a tile. Placing a tile creates “neighbor” associations between nodes which represent the paths on the board. This process creates a collection of linked lists that can be traversed in any direction. This tile placement is then broadcast to Firebase so all players will receive a real-time update of the state of the board. After they receive this broadcast, each player will move themselves along their paths until they reach the end, the edge of the board, or collide with another player.
 
 We utilized Firebase to store only the essential data to keep players’ local game states seamlessly in sync with one another. The minimal structure of the data keeps updates between players speedy and we leveraged the built-in authentication to manage game states between players.
 
@@ -95,7 +95,7 @@ Check it out on the [Chrome Web Store](http://bit.ly/rosyfeed).`,
   url: 'diacritics',
   title: 'Diacritics',
   client: 'Cornell University',
-  text: `Upon reaching its 40th year of publication, diacritics, a quarterly ‘review of contemporary criticism’ by Cornell University, felt it needed a refresh to the design. The first step was to bring back the logotype from the very first issue in 1971. We then took that retro (in a great way) logo and paired it with type from Hoefler & Co. and a clean, modern layout that is as bold as the essays in each issue. Following the initial redesign I have typeset and produced print-ready files for 13 issues.`,
+  text: `Upon reaching its 40th year of publication, diacritics, a quarterly “review of contemporary criticism” by Cornell University, felt it needed a refresh to the design. The first step was to bring back the logotype from the very first issue in 1971. We then took that retro (in a great way) logo and paired it with type from Hoefler & Co. and a clean, modern layout that is as bold as the essays in each issue. Following the initial redesign I have typeset and produced print-ready files for 13 issues.`,
   createdAtVD: false,
   awards: ['Council of Editors of Learned Journals (CELJ)','Association of American University Presses (AAUP) Book, Jacket, & Journal Show 2014'],
   images: [

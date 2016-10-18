@@ -10,7 +10,7 @@ function blurb(text){
 }
 
 export default ({project}) => (
-	<li>
+	<li className="project-card">
 	<Link to={`/project/${project.url}`}>
 		<h4>{project.title}</h4>
 		{ project.client ? <h5>{project.client}</h5> : null } 

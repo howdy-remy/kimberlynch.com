@@ -1,0 +1,295 @@
+/* Temporarily testing out fonts
+-------------------------------------------------- */
+#mfPreviewBar, #mfPreviewBarShow {display:none !important;}
+
+
+/* Variables
+-------------------------------------------------- */
+$text: 'Playfair Display', serif;
+$sans-light: 'Arboria Light', sans-serif;
+$sans-bold: 'Arboria Bold', sans-serif;
+
+$max-width: 960px;
+
+$highlight: #ffcc40;
+$light-gray: #ededed;
+$dark-gray: #4c4c4c;
+
+/* Mixins
+-------------------------------------------------- */
+@mixin upper {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Reset
+-------------------------------------------------- */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, nav, img, section, summary {
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+/* Clearfix
+-------------------------------------------------- */
+.cf:after {clear: both;}
+
+/* Site
+-------------------------------------------------- */
+body {
+  font-family: $text;
+  font-size: 18px;
+  line-height: 1.4em;
+  color: $dark-gray;
+
+  background: $light-gray;
+  padding: 2.25em 1em 2em 1em;
+}
+
+main {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto; 
+}
+
+/* Typography
+-------------------------------------------------- */
+h1 {
+  font-family: $text;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 4em;
+  letter-spacing: -2px;
+  line-height: .8em;
+  margin-bottom: 7px;
+  @media (max-width: 420px){ font-size: 3em; }
+}
+h2 {
+  @include upper;
+  font-family: $sans-light;
+  font-size: 1em;
+  margin-top: 1em;
+  @media (max-width: 420px){ font-size: .75em; }
+}
+
+h3 {
+	background-color: $dark-gray;
+  margin-bottom: 1em;
+  padding: .5em 1em;
+  
+  @include upper;
+  font-family: $sans-light;
+  font-size: .75em;
+  color: $light-gray;
+}
+
+h4 {
+	@include upper;
+  font-family: $sans-light;
+  font-size: 1.25em;
+}
+
+h5 {
+	@include upper;
+	font-family: $sans-bold;
+  font-size: .75em;
+  margin-bottom: .25em;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: inherit;
+  transition: color .5s;
+
+  &:hover { color: $highlight }
+}
+
+#project-listing a, nav a {
+  text-decoration: none;
+}
+
+/* Navigation
+-------------------------------------------------- */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: $dark-gray;
+
+  div {
+	  max-width: $max-width;
+	  margin: 0 auto;
+
+	  @include upper;
+	  font-family: $sans-bold;
+	  color: $light-gray;
+
+	  span {
+	  	padding: .3em 0;
+  		em {
+	  		text-transform: none;
+	  		letter-spacing: 0;
+	  		font-family: $text;
+	  		font-style: italic;
+	  	}
+	  }
+	  span:first-child { float: left; }
+	  span:last-child { float: right; }
+
+    @media (max-width: 997px){ padding: 0 1em; }
+    @media (max-width: 672px){ 
+      & > span:first-child {
+        margin-top: 2px; //this is a weird fix for uneven nav heights after removing $text font;
+        &::after {
+          content: ' ';
+          font-family: $text;
+        }
+        em { display:none; } 
+      }
+    }
+    @media (max-width: 420px){ a { font-size: .75em; } } 
+  }
+
+  span.isvg {
+    margin: 0 0 0 .75em;
+    padding: 0;
+    display: inline-block;
+    
+    svg {
+      transform: translateY(4px);
+      path { fill: $light-gray; }
+    }
+
+    &:hover svg path {
+      fill: $highlight;
+      cursor: pointer;
+    }
+  }
+}
+
+/* Header
+-------------------------------------------------- */
+header { margin: 4em 0; }
+
+/* Project Cards
+-------------------------------------------------- */
+.project-card { 
+  padding: 1em;
+  display: inline-block;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+
+	&:not(:last-child){ 
+		margin-bottom: 1em;
+  }
+  p {
+    &.see-more {
+    font-style: italic;
+    margin: .5em 0 0 0;
+  	font-size: .9em;
+    }
+    &.agency-project{
+      font-family: $sans-light;
+    }
+  
+    &.awards {
+      font-family: $sans-light;
+      line-height: 1.3;
+      
+      strong {
+        @include upper;
+        font-family: $sans-bold;
+        font-size: .8em;
+      }
+    }
+	}
+
+	.blurb {
+		margin-top: .5em;
+	}
+  
+  .award-flag {
+    position: absolute;
+    right: 1em;
+    top: 0;
+    height: 2em;
+    width: 2em;
+
+    background-color: $highlight;
+    color: #faa73f;
+    line-height: 1.9em;
+    text-align: center;
+  }
+}
+
+
+/* Project View Details
+-------------------------------------------------- */
+#single-project{
+  img {
+    margin-top: 1em;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    width: 100%;
+  }
+}
+
+
+/* Info
+-------------------------------------------------- */
+#info {
+  .bio, .additional-info {
+    width: 70%;
+    float: left;
+    @media (max-width: 672px){
+      width: 100%
+    }
+  }
+
+  aside {
+    width: 25%;
+    float: right;
+    ul {
+      list-style-type: none;
+      margin-bottom: 1em;
+
+      li {
+        @include upper;
+        font-family: $sans-light;
+        font-size: .75em;
+        margin-bottom: -.25em;
+      }
+    }
+
+    @media (max-width: 672px){
+      width: 100%;
+      div {
+        width: 45%;
+        margin-right: 5%;
+        display: inline-block;
+        vertical-align:top;
+      }
+    }
+  }
+
+  @media (max-width: 420px){ 
+    a { font-size: .75em; } } 
+
+}
